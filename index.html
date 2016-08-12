@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>you are my girl</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* We met at Shijiazhuang University Of Economics,</span><br />
+				<span class="space"/><span class="comments">* Being with you is the happiest moment for me!</span><br />
+					
+				<span class="space"/><span class="comments">*/</span><br />
+				Boy I = <span class="keyword">new</span> Boy(<span class="string">"Newtryon"</span>);<br />
+				Girl U = <span class="keyword">new</span> Girl(<span class="string">"Xiaoqianqian"</span>);<br />
+				<span class="comments">// 2013年12月31日，我们相爱。 </span><br />
+				I.love(U);<br />
+				<span class="comments">// 那天我们一起跨年，</span><br />
+				us = Together(I,U);<br />
+				<span class="comments">// 1314，百年一遇的机会。</span><br />
+				us.special(1314);<br />
+				<span class="comments">// 我们誓言要一生一世。</span><br />
+				us.forever();<br />
+				<span class="comments">// I believe we are complementary to each other.</span><br />
+				<span class="comments">// 我们的爱情像是掉入了死循环，</span><br />
+				<span class="keyword">int</span> time = <span class="keyword">1</span>;<br />
+				<span class="keyword">while</span> (time>0) {<br />
+				<span class="placeholder"/>I.takecare(U);<br />
+				<span class="placeholder"/><span class="comments">// 我们的感情会随时间的增加而更加稳固</span><br />
+				<span class="placeholder"/>time = time++;<br />
+				}<br />
+				<span class="comments">// 看似平淡的感情，更经得住时间的考验，</span><br />
+				I.willmarry(U);<br />
+				<span class="comments">// 天时地利人和，我会把你当宝一样。</span><br />
+				<span class="comments">// 我们会像右边这计时器一样一直走下去，不离不弃。</span><br />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						小茜茜, I have fallen in love with you for
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						&nbsp&nbsp&nbsp&nbsp&nbsp From now on my world only you<br/>
+						Love u forever and ever.<br/>
+						<div class="signature">- 小牛牛</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Inspired by <a href="#">小牛牛与小茜茜</a>story<br />
+			Copyright © 2016 <a href='#'>Newtryon</a> 2013-2016
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2013, 12, 31);
+		together.setHours(20);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
