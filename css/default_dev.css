@@ -113,3 +113,9 @@ body {
 #copyright a{
 	color:#666;
 }
+
+#song{
+	position:relative;
+	left:75%;
+	top:-30%;
+	}
